@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>cafinett8 — تماس</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa6b2}
+    *{box-sizing:border-box;font-family:Tahoma,Helvetica,Arial}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071127 0%,#031523 100%);color:#e6eef6}
+    .wrap{max-width:680px;margin:36px auto;padding:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:16px;padding:22px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .row{display:flex;gap:14px;align-items:center}
+    .avatar{width:92px;height:92px;border-radius:18px;flex:0 0 92px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center}
+    .avatar svg{width:56px;height:56px;fill:#021018}
+    h1{font-size:20px;margin:0 0 6px}
+    p.lead{margin:0;color:var(--muted)}
+    .buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    a.btn{display:inline-flex;align-items:center;gap:10px;padding:12px;border-radius:12px;text-decoration:none;font-weight:600;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03)}
+    a.btn svg{width:22px;height:22px;flex:0 0 22px}
+    .copy{display:inline-flex;align-items:center;gap:8px;margin-top:12px;color:var(--muted);cursor:pointer}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:480px){.row{flex-direction:row}.buttons{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="row">
+        <div class="avatar" title="cafinett8">
+          <!-- Telegram paper-plane style as main logo -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.6 2.3L2.8 9.6c-1 0.4-1 1.7 0 2.1l4.6 1.7 1.8 5.9c0.3 1 1.5 1.4 2.2 0.7l2.9-2.8 4.6 3.4c0.9 0.6 2.1-0.1 2.1-1.2V3.5c0-1.1-1.2-1.8-2.4-1.2z"/>
+          </svg>
+        </div>
+        <div style="flex:1">
+          <h1>cafinett8</h1>
+          <p class="lead">صفحهٔ رسمی — برای تماس، پیام و ورود به اپ‌ها روی لوگوها بزنید.</p>
+          <div class="copy" onclick="copyNumber()" title="کپی شماره">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            <span id="num">+989224044842</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a class="btn" href="https://t.me/cafinett8" target="_blank" rel="noopener noreferrer">
+          <!-- telegram icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.9 3.6c-.2-.8-.7-1.1-1.5-.9L2.6 9.1c-.7.2-.7.7-.1.9l3.8 1.3 1.4 4.6c.3 1 1.5 1.3 2.2.6l2.7-2.6 4.6 3.4c.8.6 1.8.1 2-1.1l2.1-16.2c.1-.6-.2-1.1-.9-1.5z"/></svg>
+          باز کردن تلگرام
+        </a>
+
+        <a class="btn" href="https://wa.me/989224044842" target="_blank" rel="noopener noreferrer">
+          <!-- whatsapp icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 3.5A11.9 11.9 0 0012 .5 11.8 11.8 0 003.7 4.2C1.6 7.2 1.6 11 3.6 14.2L2 21.1l6.9-1.7c2.9 1.6 6.6 1.3 9.2-.9 3.4-3 4.1-8 1.4-11.1zM12 20a8 8 0 01-4.1-1.1l-.3-.2-4.1 1 1.1-3.9-.2-.3A7.9 7.9 0 114.1 5.9 8 8 0 0112 20zM17.1 14.1c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-1 1.2-.2.1-.4.1-.7 0-.7-.3-2-1.5-2.9-3.2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.6.2-.2.2-.4.3-.7 0-.2 0-.4-.1-.6-.2-.3-1.4-3-1.9-4.1-.2-.4-.5-.4-.7-.4-.2 0-.5 0-.8 0-.3 0-.7.1-1 0-.3-.1-1.1.1-1.7 1.3-.6 1.2-2.1 4.1 2.1 7.5 3 2.6 6 2.9 7 2.9.7 0 2.4-.9 2.7-1.9.3-1 .3-1.8.2-1.9-.1-.2-.3-.3-.6-.4z"/></svg>
+          پیام واتساپ
+        </a>
+      </div>
+
+      <footer>
+        آیدی تلگرام: <strong>@cafinett8</strong> — شماره: <strong>+98 922 404 4842</strong>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function copyNumber(){
+      const num = document.getElementById('num').innerText;
+      navigator.clipboard?.writeText(num).then(()=>{
+        alert('شماره کپی شد: ' + num);
+      }).catch(()=>{
+        prompt('شماره را کپی کنید:', num);
+      });
+    }
+  </script>
+</body>
+</html>
