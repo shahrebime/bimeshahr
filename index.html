@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بیمه شهر - Bime Shahr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+            color: var(--light);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* نوار ناوبری */
+        .navbar {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-link:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background: var(--primary);
+        }
+        
+        /* بخش اصلی */
+        .main-content {
+            margin-top: 80px;
+            padding: 80px 0;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        /* دکمه‌ها */
+        .btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* خدمات */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 60px;
+            color: var(--accent);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2em;
+        }
+        
+        .service-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .service-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #10b981;
+            margin: 20px 0;
+        }
+        
+        /* فوتر */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-top: 2px solid var(--primary);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* انیمیشن */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- نوار ناوبری -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-city"></i>
+                    بیمه<span>شهر</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> خانه</a></li>
+                    <li><a href="khadamati.html" class="nav-link"><i class="fas fa-list"></i> خدمات</a></li>
+                    <li><a href="gheymat.html" class="nav-link"><i class="fas fa-tags"></i> قیمت‌ها</a></li>
+                    <li><a href="darbare-ma.html" class="nav-link"><i class="fas fa-info-circle"></i> درباره ما</a></li>
+                    <li><a href="tamas.html" class="nav-link"><i class="fas fa-phone"></i> تماس</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- محتوای اصلی -->
+    <div class="main-content">
+        <div class="container">
+            <!-- بخش هیرو -->
+            <section class="hero fade-in">
+                <h1>بیمه شهر</h1>
+                <p>پلتفرم جامع بیمه‌ای برای تمام شهروندان. با بهترین پوشش‌ها و مناسب‌ترین قیمت‌ها، آرامش را به زندگی شما بازمی‌گردانیم.</p>
+                
+                <div style="margin-top: 50px;">
+                    <a href="khadamati.html" class="btn">
+                        <i class="fas fa-rocket"></i>
+                        مشاهده خدمات
+                    </a>
+                    <a href="gheymat.html" class="btn btn-outline">
+                        <i class="fas fa-bolt"></i>
+                        استعلام قیمت
+                    </a>
+                </div>
+            </section>
+
+            <!-- خدمات ویژه -->
+            <section class="services">
+                <h2 class="section-title">خدمات بیمه‌ای ما</h2>
+                
+                <div class="services-grid">
+                    <!-- کارت خدمات ۱ -->
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>بیمه شخص ثالث</h3>
+                        <p>پوشش کامل مسئولیت مدنی در مقابل اشخاص ثالث با بهترین شرایط و پوشش‌های تکمیلی</p>
+                        <div class="price">۱,۲۰۰,۰۰۰ تومان</div>
+                        <a href="gheymat.html" class="btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            خرید آنلاین
+                        </a>
+                    </div>
+
+                    <!-- کارت خدمات ۲ -->
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <h3>بیمه بدنه</h3>
+                        <p>پوشش کامل خسارات بدنه، سرقت، آتش‌سوزی و بلایای طبیعی برای خودروی شما</p>
+                        <div class="price">۲,۸۰۰,۰۰۰ تومان</div>
+                        <a href="gheymat.html" class="btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            خرید آنلاین
+                        </a>
+                    </div>
+
+                    <!-- کارت خدمات ۳ -->
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <h3>بیمه موتورسیکلت</h3>
+                        <p>پوشش کامل برای انواع موتورسیکلت با شرایط ویژه و پوشش‌های اختصاصی</p>
+                        <div class="price">۵۰۰,۰۰۰ تومان</div>
+                        <a href="gheymat.html" class="btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            خرید آنلاین
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- بخش درباره -->
+                <div class="footer-section">
+                    <h3>بیمه شهر</h3>
+                    <p>ما با بیش از یک دهه تجربه در صنعت بیمه، همراه مطمئن شما در مسیر آرامش و امنیت هستیم.</p>
+                </div>
+
+                <!-- لینک‌های سریع -->
+                <div class="footer-section">
+                    <h3>لینک‌های سریع</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-arrow-left"></i> خانه</a></li>
+                        <li><a href="khadamati.html"><i class="fas fa-arrow-left"></i> خدمات بیمه‌ای</a></li>
+                        <li><a href="gheymat.html"><i class="fas fa-arrow-left"></i> قیمت‌ها</a></li>
+                        <li><a href="darbare-ma.html"><i class="fas fa-arrow-left"></i> درباره ما</a></li>
+                        <li><a href="tamas.html"><i class="fas fa-arrow-left"></i> تماس با ما</a></li>
+                    </ul>
+                </div>
+
+                <!-- اطلاعات تماس -->
+                <div class="footer-section">
+                    <h3>تماس با ما</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@bimeshahr.com</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>تهران، خیابان ولیعصر</span>
+                    </div>
+                </div>
+
+                <!-- ساعات کاری -->
+                <div class="footer-section">
+                    <h3>ساعات کاری</h3>
+                    <p>شنبه - چهارشنبه: ۸:۰۰ - ۱۷:۰۰</p>
+                    <p>پنجشنبه: ۸:۰۰ - ۱۴:۰۰</p>
+                    <p>جمعه: تعطیل</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© ۱۴۰۳ - بیمه شهر. کلیه حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // اسکرول نرم
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // افکت اسکرول برای نوار ناوبری
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(30, 41, 59, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(30, 41, 59, 0.95)';
+            }
+        });
+    </script>
+</body>
+              </html>
