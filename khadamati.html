@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #1d4ed8;
-            --accent: #f59e0b;
-            --dark: #1e293b;
-            --light: #f8fafc;
+            --primary: #DC2626;
+            --secondary: #B91C1C;
+            --accent: #F59E0B;
+            --dark: #1F2937;
+            --light: #FEF3C7;
         }
         
         * {
@@ -22,7 +22,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+            background: linear-gradient(135deg, var(--dark) 0%, #111827 100%);
             color: var(--light);
             min-height: 100vh;
         }
@@ -35,7 +35,7 @@
         
         /* نوار ناوبری */
         .navbar {
-            background: rgba(30, 41, 59, 0.95);
+            background: rgba(31, 41, 55, 0.95);
             backdrop-filter: blur(20px);
             padding: 15px 0;
             position: fixed;
@@ -131,12 +131,12 @@
         }
         
         .service-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -154,7 +154,8 @@
         
         .service-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--primary);
         }
         
         .service-icon {
@@ -176,7 +177,7 @@
         }
         
         .service-card p {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.7;
             margin-bottom: 20px;
         }
@@ -188,7 +189,7 @@
         
         .features-list li {
             margin-bottom: 10px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -218,7 +219,7 @@
         
         .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
         }
         
         .btn-outline {
@@ -231,10 +232,76 @@
             background: var(--primary);
             color: white;
         }
+
+        /* دکمه‌های ارتباطی */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .telegram-btn {
+            background: #0088cc;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .telegram-btn:hover {
+            background: #0077b5;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 136, 204, 0.4);
+        }
+        
+        .eitaa-btn {
+            background: #FF6B35;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .eitaa-btn:hover {
+            background: #E55A2B;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
         
         /* فوتر */
         footer {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(17, 24, 39, 0.95);
             padding: 60px 0 30px;
             margin-top: 80px;
             border-top: 2px solid var(--primary);
@@ -254,7 +321,7 @@
         }
         
         .footer-section p {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             margin-bottom: 15px;
         }
@@ -268,7 +335,7 @@
         }
         
         .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s;
             display: flex;
@@ -285,14 +352,32 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 12px;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .social-contact {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-contact a {
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            transition: all 0.3s;
         }
         
         .copyright {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
@@ -324,6 +409,22 @@
             <section class="page-header">
                 <h1>خدمات بیمه‌ای ما</h1>
                 <p>با گسترده‌ترین مجموعه خدمات بیمه‌ای در ایران، تمام نیازهای بیمه‌ای شما را پوشش می‌دهیم</p>
+                
+                <!-- دکمه‌های ارتباطی -->
+                <div class="contact-buttons">
+                    <a href="https://t.me/09224015405" class="telegram-btn" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        ارتباط در تلگرام
+                    </a>
+                    <a href="https://eitaa.com/09224015405" class="eitaa-btn" target="_blank">
+                        <i class="fas fa-comment-alt"></i>
+                        ارتباط در ایتا
+                    </a>
+                    <a href="https://wa.me/989224015405" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        ارتباط در واتساپ
+                    </a>
+                </div>
             </section>
 
             <!-- خدمات جامع -->
@@ -466,6 +567,16 @@
                 <div class="footer-section">
                     <h3>بیمه شهر</h3>
                     <p>همراه مطمئن شما در مسیر آرامش و امنیت</p>
+                    <div class="social-contact">
+                        <a href="https://t.me/09224015405" class="telegram-btn" target="_blank" style="padding: 8px 15px;">
+                            <i class="fab fa-telegram"></i>
+                            تلگرام
+                        </a>
+                        <a href="https://eitaa.com/09224015405" class="eitaa-btn" target="_blank" style="padding: 8px 15px;">
+                            <i class="fas fa-comment-alt"></i>
+                            ایتا
+                        </a>
+                    </div>
                 </div>
 
                 <div class="footer-section">
@@ -483,7 +594,7 @@
                     <h3>تماس با ما</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
-                        <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
+                        <span>۰۹۲۲۴۰۱۵۴۰۵</span>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
@@ -491,15 +602,15 @@
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>تهران، خیابان ولیعصر</span>
+                        <span>تهران قرچک، خیابان محمد آباد مهدیه ۲۱ پلاک ۱۰</span>
                     </div>
                 </div>
 
                 <div class="footer-section">
                     <h3>ساعات کاری</h3>
-                    <p>شنبه - چهارشنبه: ۸:۰۰ - ۱۷:۰۰</p>
-                    <p>پنجشنبه: ۸:۰۰ - ۱۴:۰۰</p>
-                    <p>جمعه: تعطیل</p>
+                    <p>هر روز از ساعت ۱۰:۰۰ صبح تا ۲۱:۰۰ شب</p>
+                    <p>پاسخگویی ۲۴ ساعته در پیام‌رسان‌ها</p>
+                    <p>پشتیبانی آنلاین</p>
                 </div>
             </div>
 
@@ -521,4 +632,4 @@
         });
     </script>
 </body>
-  </html>
+</html>
