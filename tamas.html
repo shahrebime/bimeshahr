@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما - بیمه شهر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* نوار ناوبری */
+        .navbar {
+            background: rgba(30, 41, 59, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-link:hover {
+            background: var(--primary);
+        }
+        
+        .nav-link.active {
+            background: var(--primary);
+        }
+        
+        /* محتوای اصلی */
+        .main-content {
+            margin-top: 80px;
+            padding: 80px 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        /* بخش تماس */
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-content {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 1.2em;
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.5em;
+            width: 40px;
+        }
+        
+        /* دکمه‌های ارتباطی */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .telegram-btn {
+            background: #0088cc;
+            color: white;
+            padding: 16px 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+        
+        .telegram-btn:hover {
+            background: #0077b5;
+            transform: scale(1.05);
+        }
+        
+        .eitaa-btn {
+            background: #FF6B35;
+            color: white;
+            padding: 16px 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+        
+        .eitaa-btn:hover {
+            background: #E55A2B;
+            transform: scale(1.05);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 16px 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+        
+        /* فوتر */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-top: 2px solid var(--primary);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- نوار ناوبری -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-city"></i>
+                    بیمه<span>شهر</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> خانه</a></li>
+                    <li><a href="khadamati.html" class="nav-link"><i class="fas fa-list"></i> خدمات</a></li>
+                    <li><a href="gheymat.html" class="nav-link"><i class="fas fa-tags"></i> قیمت‌ها</a></li>
+                    <li><a href="darbare-ma.html" class="nav-link"><i class="fas fa-info-circle"></i> درباره ما</a></li>
+                    <li><a href="tamas.html" class="nav-link active"><i class="fas fa-phone"></i> تماس</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- محتوای اصلی -->
+    <div class="main-content">
+        <div class="container">
+            <!-- هدر صفحه -->
+            <section class="page-header">
+                <h1>تماس با ما</h1>
+            </section>
+
+            <!-- بخش تماس -->
+            <section class="contact-section">
+                <div class="contact-content">
+                    <!-- اطلاعات تماس -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>۰۹۲۲۴۰۱۵۴۰۵</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@bimeshahr.com</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تهران قرچک، خیابان محمد آباد مهدیه ۲۱ پلاک ۱۰</span>
+                        </div>
+                    </div>
+
+                    <!-- دکمه‌های ارتباطی -->
+                    <div class="contact-buttons">
+                        <a href="https://t.me/09224015405" class="telegram-btn" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                            ارتباط در تلگرام
+                        </a>
+                        <a href="https://eitaa.com/09224015405" class="eitaa-btn" target="_blank">
+                            <i class="fas fa-comment-alt"></i>
+                            ارتباط در ایتا
+                        </a>
+                        <a href="https://wa.me/989224015405" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            ارتباط در واتساپ
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>بیمه شهر</h3>
+                    <p>همراه مطمئن شما در مسیر آرامش و امنیت</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>لینک‌های سریع</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-arrow-left"></i> خانه</a></li>
+                        <li><a href="khadamati.html"><i class="fas fa-arrow-left"></i> خدمات بیمه‌ای</a></li>
+                        <li><a href="gheymat.html"><i class="fas fa-arrow-left"></i> قیمت‌ها</a></li>
+                        <li><a href="darbare-ma.html"><i class="fas fa-arrow-left"></i> درباره ما</a></li>
+                        <li><a href="tamas.html"><i class="fas fa-arrow-left"></i> تماس با ما</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>تماس با ما</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>۰۹۲۲۴۰۱۵۴۰۵</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@bimeshahr.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>تهران قرچک، خیابان محمد آباد مهدیه ۲۱ پلاک ۱۰</span>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>ساعات کاری</h3>
+                    <p>هر روز از ساعت ۱۰:۰۰ صبح تا ۲۱:۰۰ شب</p>
+                    <p>پاسخگویی ۲۴ ساعته در پیام‌رسان‌ها</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© ۱۴۰۳ - بیمه شهر. کلیه حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
