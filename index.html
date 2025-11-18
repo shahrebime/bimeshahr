@@ -1,242 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شهر کالا | خرید اینترنتی از بزرگترین فروشگاه اینترنتی ایران</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>سایت من — GitHub Pages</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="یک سایت نمونه منتشر شده با GitHub Pages">
 </head>
 <body>
-    <!-- نوار بالایی -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-links">
-                <a href="#"><i class="fas fa-map-marker-alt"></i> انتخاب شهر</a>
-                <a href="#"><i class="fas fa-user"></i> ورود به حساب کاربری</a>
-                <a href="#"><i class="fas fa-store"></i> فروشنده شوید</a>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">نام سایت</h1>
+      <nav>
+        <a href="#home">خانه</a>
+        <a href="#about">درباره</a>
+        <a href="#contact">تماس</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- هدر اصلی -->
-    <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-                <!-- لوگو -->
-                <div class="logo">
-                    <img src="https://via.placeholder.com/150x50/4a90e2/ffffff?text=شهر+کالا" alt="شهر کالا">
-                </div>
-
-                <!-- جستجو -->
-                <div class="search-container">
-                    <div class="search-box">
-                        <input type="text" placeholder="جستجو در شهر کالا..." class="search-input">
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                            جستجو
-                        </button>
-                    </div>
-                    <div class="search-suggestions">
-                        <span>پیشنهاد: </span>
-                        <a href="#">گوشی سامسونگ</a>
-                        <a href="#">لپ تاپ ایسوس</a>
-                        <a href="#">هدفون</a>
-                    </div>
-                </div>
-
-                <!-- اقدامات کاربر -->
-                <div class="user-actions">
-                    <button class="compare-btn">
-                        <i class="fas fa-chart-bar"></i>
-                        مقایسه
-                    </button>
-                    <button class="wishlist-btn">
-                        <i class="far fa-heart"></i>
-                        علاقه‌مندی
-                    </button>
-                    <button class="cart-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">۰</span>
-                        سبد خرید
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- منوی دسته‌بندی -->
-    <nav class="category-nav">
-        <div class="container">
-            <div class="nav-content">
-                <!-- منوی همبرگری برای موبایل -->
-                <button class="hamburger-menu">
-                    <i class="fas fa-bars"></i>
-                    دسته‌بندی کالاها
-                </button>
-
-                <!-- دسته‌بندی‌ها -->
-                <div class="categories">
-                    <a href="#" class="category-link">
-                        <i class="fas fa-mobile-alt"></i>
-                        کالای دیجیتال
-                    </a>
-                    <a href="#" class="category-link">
-                        <i class="fas fa-tshirt"></i>
-                        پوشاک
-                    </a>
-                    <a href="#" class="category-link">
-                        <i class="fas fa-utensils"></i>
-                        سوپرمارکت
-                    </a>
-                    <a href="#" class="category-link">
-                        <i class="fas fa-home"></i>
-                        خانه و آشپزخانه
-                    </a>
-                </div>
-
-                <!-- پیشنهادات ویژه -->
-                <div class="special-offers">
-                    <a href="#" class="offer-link">شگفت‌انگیزها</a>
-                    <a href="#" class="offer-link">پرفروش‌ترین‌ها</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- اسلایدر اصلی -->
-    <section class="hero-slider">
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <div class="slide active">
-                    <img src="https://via.placeholder.com/1200x400/3498db/ffffff?text=تخفیف‌های+ویژه+تابستانه" alt="تخفیف ویژه">
-                    <div class="slide-content">
-                        <h2>تخفیف‌های شگفت‌انگیز تابستانه</h2>
-                        <p>تا ۵۰٪ تخفیف در محصولات منتخب</p>
-                        <button class="cta-button">مشاهده محصولات</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h2>سلام! این سایت با GitHub Pages ساخته شده</h2>
+        <p>یک قالب ساده و واکنش‌گرا — آماده تغییر و توسعه.</p>
+        <a class="btn" href="#about">شروع کن</a>
+      </div>
     </section>
 
-    <!-- دسته‌بندی‌های سریع -->
-    <section class="quick-categories">
-        <div class="container">
-            <div class="category-grid">
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <span>موبایل</span>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <span>لپ‌تاپ</span>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-headphones"></i>
-                    </div>
-                    <span>صوتی و تصویری</span>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-tv"></i>
-                    </div>
-                    <span>تلویزیون</span>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <span>کنسول بازی</span>
-                </div>
-            </div>
-        </div>
+    <section id="about" class="container content">
+      <h3>درباره</h3>
+      <p>این صفحه نمونه‌ای برای نشان دادن نحوه ساخت و انتشار سایت است. هر فایلی را که اینجا می‌بینید می‌توانید تغییر دهید.</p>
     </section>
 
-    <!-- محصولات پربازدید -->
-    <section class="featured-products">
-        <div class="container">
-            <div class="section-header">
-                <h2>محصولات پربازدید</h2>
-                <a href="#" class="see-all">مشاهده همه <i class="fas fa-arrow-left"></i></a>
-            </div>
-            
-            <div class="products-grid">
-                <!-- محصول 1 -->
-                <div class="product-card">
-                    <div class="product-badge">پرفروش</div>
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/200x200/3498db/ffffff?text=گوشی+سامسونگ" alt="گوشی سامسونگ">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">گوشی موبایل سامسونگ گلکسی A73 دو سیم کارت</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-text">(۴۲۳ نظر)</span>
-                        </div>
-                        <div class="product-price">
-                            <div class="current-price">۱۲,۵۰۰,۰۰۰ تومان</div>
-                            <div class="discount-price">۱۴,۸۰۰,۰۰۰ تومان</div>
-                            <div class="discount-percent">۱۵٪</div>
-                        </div>
-                        <div class="product-features">
-                            <span>قیمت سایر فروشندگان: از ۱۲,۳۰۰,۰۰۰ تومان</span>
-                        </div>
-                        <button class="add-to-cart-btn">
-                            <i class="fas fa-cart-plus"></i>
-                            افزودن به سبد خرید
-                        </button>
-                    </div>
-                </div>
-
-                <!-- محصول 2 -->
-                <div class="product-card">
-                    <div class="product-badge">جدید</div>
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/200x200/e74c3c/ffffff?text=لپ+تاپ+ایسوس" alt="لپ تاپ ایسوس">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">لپ‌تاپ ۱۵ اینچی ایسوس ویووبوک</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">(۱۸۹ نظر)</span>
-                        </div>
-                        <div class="product-price">
-                            <div class="current-price">۲۴,۳۰۰,۰۰۰ تومان</div>
-                            <div class="discount-price">۲۷,۰۰۰,۰۰۰ تومان</div>
-                            <div class="discount-percent">۱۰٪</div>
-                        </div>
-                        <div class="product-features">
-                            <span>قیمت سایر فروشندگان: از ۲۴,۱۰۰,۰۰۰ تومان</span>
-                        </div>
-                        <button class="add-to-cart-btn">
-                            <i class="fas fa-cart-plus"></i>
-                            افزودن به سبد خرید
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="contact" class="container content">
+      <h3>تماس</h3>
+      <p>فرم تماس نمونه (بدون بک‌اند):</p>
+      <form id="contactForm">
+        <label>نام
+          <input type="text" name="name" required>
+        </label>
+        <label>ایمیل
+          <input type="email" name="email" required>
+        </label>
+        <label>پیام
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">ارسال</button>
+      </form>
+      <p id="formMsg" aria-live="polite"></p>
     </section>
+  </main>
 
-    <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> نام شما — ساخته‌شده با ❤️ و GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
