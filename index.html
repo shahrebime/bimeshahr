@@ -3,238 +3,259 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>بیمه‌شهر | استعلام و خرید آنلاین بیمه</title>
+  <title>بیمه‌شهر — استعلام و خرید بیمه</title>
+  <meta name="description" content="بیمه‌شهر — استعلام، مقایسه و خرید آنلاین بیمه. تماس: ۰۹۲۲۴۰۱۵۴۰۵. آدرس: تهران، قرچک، خیابان محمدآباد مهدیه ۲۱، پلاک ۱۰" />
+  <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect rx="18" width="100" height="100" fill="%2306b6d4"/><text x="50" y="58" font-size="48" text-anchor="middle" font-family="Vazirmatn,Arial" fill="%23001214">ب</text></svg>'>
 
   <style>
+    /* پایه */
     :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#06b6d4;
-      --muted:#9aa6b2;
-      --radius:16px;
-      font-family: "Vazirmatn", system-ui;
-    }
-    body{
-      margin:0;
-      background:#071226;
-      color:#e6eef3;
+      --bg:#ffffff;
+      --muted:#55606a;
+      --accent:#0ea5a4;
+      --card:#f7fafc;
+      --radius:12px;
+      --shadow: 0 6px 24px rgba(16,24,40,0.08);
+      font-family: "Vazirmatn", "Helvetica Neue", Arial, sans-serif;
+      color-scheme: light;
     }
     *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#0b2b3a}
+    a{color:inherit}
+    .container{max-width:1100px;margin:28px auto;padding:24px;}
 
-    /* هدر */
-    header{
-      background:linear-gradient(135deg,#06101f,#0d1c33);
-      padding:24px 30px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      position:sticky;
-      top:0;
-      z-index:10;
-      box-shadow:0 2px 12px rgba(0,0,0,0.45);
-    }
-    .logo{
-      font-size:26px;
-      font-weight:800;
-      color:var(--accent);
-    }
-    nav a{
-      margin-left:20px;
-      text-decoration:none;
-      color:#d8e4ec;
-      font-weight:600;
-    }
+/* هدر */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 0;
+  border-bottom:1px solid #eef2f5;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo-wrap{
+  width:64px;height:64px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#7dd3d1);display:grid;place-items:center;box-shadow:var(--shadow);
+  flex:0 0 64px;
+}
+.logo-mark{
+  width:46px;height:46px;display:block;
+}
+.site-title{font-size:20px;font-weight:800;line-height:1}
+.site-sub{color:var(--muted);font-size:13px;margin-top:4px}
 
-    /* هرو */
-    .hero{
-      padding:80px 20px;
-      text-align:center;
-      background:linear-gradient(180deg,#08172c,#071423);
-    }
-    .hero h1{
-      font-size:38px;
-      margin-bottom:12px;
-    }
-    .hero p{
-      color:var(--muted);
-      font-size:18px;
-      max-width:600px;
-      margin:0 auto;
-      line-height:1.8;
-    }
+/* ناوبری ساده */
+nav{display:flex;gap:12px;align-items:center}
+nav a{padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700;color:#0b2b3a}
+nav a.secondary{background:#f1f7f7;border:1px solid #e6f0ef}
 
-    /* باکس خدمات */
-    .services{
-      padding:50px 20px;
-      max-width:1100px;
-      margin:auto;
-    }
-    .services h2{
-      text-align:center;
-      margin-bottom:30px;
-      font-size:28px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-    }
-    .card{
-      background:var(--card);
-      padding:20px;
-      border-radius:16px;
-      box-shadow:0 6px 22px rgba(0,0,0,0.4);
-      border:1px solid rgba(255,255,255,0.05);
-      transition:.2s;
-    }
-    .card:hover{transform:translateY(-4px);}
+/* هرو */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:22px;
+  align-items:center;
+  padding:34px 0;
+}
+@media (max-width:900px){ .hero{grid-template-columns:1fr; } }
 
-    .card h3{
-      margin:0 0 8px 0;
-      color:var(--accent);
-    }
-    .card p{
-      color:var(--muted);
-      line-height:1.6;
-      margin:0;
-    }
+.hero-left h1{font-size:30px;margin:0 0 8px}
+.hero-left p{color:var(--muted);margin:0 0 18px;line-height:1.7}
 
-    /* بخش تماس (همان نسخه قبلی) */
-    .contact-section{
-      padding:50px 20px;
-      max-width:1200px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:26px;
-    }
-    @media(max-width:880px){
-      .contact-section{grid-template-columns:1fr;}
-    }
+/* کارت‌های خدمات */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:18px;
+  box-shadow:var(--shadow);
+  border:1px solid #eef6f6;
+}
+.card h3{margin:0 0 8px;color:#094047}
+.card p{margin:0;color:var(--muted);font-size:14px}
 
-    .info-card{
-      background:var(--card);
-      padding:20px;
-      border-radius:16px;
-      box-shadow:0 6px 22px rgba(0,0,0,0.4);
-    }
+/* پنل تماس و نقشه */
+.contact {
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:18px;
+}
+@media (max-width:980px){ .contact{grid-template-columns:1fr;} }
 
-    .btn{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.05);
-      padding:12px 14px;
-      border-radius:12px;
-      margin-top:8px;
-      display:flex;
-      align-items:center;
-      text-decoration:none;
-      color:#e9eef2;
-      font-weight:600;
-      transition:0.15s;
-    }
-    .btn:hover{
-      box-shadow:0 8px 20px rgba(0,0,0,0.55);
-      transform:translateY(-2px);
-    }
+.contact .panel{
+  background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);border:1px solid #eef6f6;
+}
+.contact .panel h3{margin:0 0 8px}
+.contact .phone{
+  display:flex;flex-direction:column;gap:8px;margin-top:10px;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700;
+  border:1px solid rgba(11,43,58,0.06);
+  background:#ffffff;
+  box-shadow: 0 6px 18px rgba(11,43,58,0.04);
+}
+.cta-btn.primary{background:linear-gradient(90deg,var(--accent),#66d7d3);color:white;border:none}
+.small{font-size:13px;color:var(--muted)}
 
-    footer{
-      text-align:center;
-      padding:25px;
-      color:var(--muted);
-      margin-top:30px;
-      font-size:14px;
-    }
+/* نقشه */
+.map-wrap{height:300px;border-radius:10px;overflow:hidden;border:1px solid #ebf6f6}
 
-  </style>
+/* فوتِر */
+footer{text-align:center;color:var(--muted);margin:26px 0 8px;font-size:13px}
+
+/* کمک‌رسانی برای موبایل: آیکن کنار متن */
+.icon{width:18px;height:18px;display:inline-block;flex:0 0 18px}
+</style>
 </head>
-
 <body>
+  <div class="container">
 
-  <!-- هدر -->
-  <header>
-    <div class="logo">بیمه‌شهر</div>
-    <nav>
-      <a href="#services">خدمات بیمه</a>
-      <a href="#contact">تماس</a>
-    </nav>
-  </header>
-
-  <!-- هرو -->
-  <section class="hero">
-    <h1>استعلام و خرید آنلاین بیمه با بهترین قیمت</h1>
-    <p>
-      بیمه‌شهر، همراه مطمئن شما در مسیر انتخاب و خرید انواع بیمه‌نامه‌ها.  
-      مقایسه قیمت، پشتیبانی سریع، خرید آسان.
-    </p>
-  </section>
-
-  <!-- خدمات -->
-  <section class="services" id="services">
-    <h2>خدمات بیمه‌شهر</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>بیمه شخص ثالث</h3>
-        <p>استعلام و خرید فوری بیمه شخص ثالث با بهترین نرخ‌های شرکت‌های مختلف بیمه.</p>
+    <!-- هدر با لوگوی SVG -->
+    <header>
+      <div class="brand">
+        <div class="logo-wrap" aria-hidden="true">
+          <!-- لوگوی ساده SVG: حرف "ب" + شکل محافظ -->
+          <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="لوگو بیمه‌شهر">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#06b6d4"/>
+                <stop offset="1" stop-color="#7c3aed"/>
+              </linearGradient>
+            </defs>
+            <rect x="6" y="6" width="88" height="88" rx="16" fill="url(#g1)"/>
+            <path d="M66 68c0 0-8 6-18 6s-18-6-18-6 6-24 18-24 18 24 18 24z" fill="#021519" opacity="0.06"/>
+            <text x="50" y="62" font-size="46" text-anchor="middle" font-family="Vazirmatn, Arial" fill="#021619" font-weight="800">ب</text>
+          </svg>
+        </div>
+        <div>
+          <div class="site-title">بیمه‌شهر</div>
+          <div class="site-sub">استعلام، مقایسه و خرید آنلاین بیمه</div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>بیمه بدنه</h3>
-        <p>پوشش کامل، امکان انتخاب تعهدات، پرداخت آنلاین و صدور لحظه‌ای بیمه‌نامه.</p>
+      <nav aria-label="منوی اصلی">
+        <a href="#services">خدمات</a>
+        <a href="#contact" class="secondary">تماس</a>
+      </nav>
+    </header>
+
+    <!-- هرو -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h1 id="hero-title">خرید هوشمندانه بیمه — سریع، امن، آنلاین</h1>
+        <p>بیمه‌شهر به شما کمک می‌کند استعلام بگیرید، شرکت‌ها را مقایسه کنید و بیمه‌نامه را آنلاین خرید کنید. پشتیبانی تلفنی و پیام‌رسان‌ها همیشه در دسترس است.</p>
+
+        <div class="services" id="services" aria-label="خدمات بیمه‌شهر">
+          <div class="card">
+            <h3>بیمه شخص ثالث</h3>
+            <p>صدور سریع، مقایسه نرخ شرکت‌ها و امکان پرداخت آنلاین.</p>
+          </div>
+          <div class="card">
+            <h3>بیمه بدنه</h3>
+            <p>تعهدات متنوع، پوشش‌های الحاقی و صدور آنلاین.</p>
+          </div>
+          <div class="card">
+            <h3>بیمه درمان</h3>
+            <p>بیمه‌های تکمیلی انفرادی و خانوادگی با طرح‌های مختلف.</p>
+          </div>
+          <div class="card">
+            <h3>بیمه آتش‌سوزی و اموال</h3>
+            <p>پوشش اموال منازل و کسب‌وکارها با شرایط قابل تنظیم.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>بیمه درمان</h3>
-        <p>خرید بیمه تکمیلی انفرادی و خانوادگی با پوشش‌های متنوع و قیمت مناسب.</p>
+      <!-- باکس سریع تماس در هِرو -->
+      <aside style="align-self:start;">
+        <div class="panel" style="width:100%;max-width:360px;">
+          <h3 style="margin-top:0">ارتباط فوری</h3>
+          <p class="small">برای استعلام سریع از طریق یکی از راه‌های زیر با ما در تماس باشید:</p>
+
+          <div class="phone" role="list" aria-label="روش‌های تماس">
+            <a class="cta-btn primary" href="tel:+989224015405" role="listitem" aria-label="تماس تلفنی">
+              <!-- تلفن آیکن -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.09 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12 1.05.38 2.08.76 3.06a2 2 0 0 1-.45 2.11L8.91 10.91a16 16 0 0 0 6 6l1.02-1.02a2 2 0 0 1 2.11-.45c.98.38 2.01.64 3.06.76A2 2 0 0 1 22 16.92z" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>تماس مستقیم</span>
+              <span style="margin-inline-start:auto;font-family:monospace">۰۹۲۲۴۰۱۵۴۰۵</span>
+            </a>
+
+            <a class="cta-btn" href="https://wa.me/989224015405" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="واتساپ">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.05A9 9 0 1 0 11.95 21l-1.5.4.4-1.5A9 9 0 0 0 21 12.05z" stroke="#0b2b3a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>واتساپ</span>
+              <span style="margin-inline-start:auto" class="small">پیام و تماس</span>
+            </a>
+
+            <a class="cta-btn" href="https://t.me/+989224015405" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="تلگرام">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 2 2 12.2l5.4 2.1L9.9 22l3-2 5.1 3L22 2z" stroke="#0b2b3a" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>تلگرام</span>
+              <span style="margin-inline-start:auto" class="small">@یا شماره</span>
+            </a>
+
+            <a class="cta-btn" href="https://eitaa.com/+989224015405" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="ایتا">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#0b2b3a" stroke-width="1"/><path d="M7 12.5s3-2 5-2 5 2 5 2" stroke="#0b2b3a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>ایتا</span>
+              <span style="margin-inline-start:auto" class="small">پیام سریع</span>
+            </a>
+
+            <a class="cta-btn" href="sms:+989224015405" role="listitem" aria-label="پیامک">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-6 4V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" stroke="#0b2b3a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>ارسال پیامک</span>
+              <span style="margin-inline-start:auto" class="small">SMS</span>
+            </a>
+          </div>
+
+          <div style="margin-top:12px">
+            <a class="cta-btn" href="#contact" style="width:100%;justify-content:center">جزئیات تماس و آدرس</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- بخش تماس و نقشه -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="panel" aria-labelledby="contact-title">
+        <h3 id="contact-title">اطلاعات تماس و آدرس</h3>
+        <p class="small" style="margin-top:6px">شماره تماس:</p>
+        <p style="font-family:monospace;font-weight:700;margin:6px 0 12px">۰۹۲۲۴۰۱۵۴۰۵</p>
+
+        <p class="small" style="margin:0 0 8px">آدرس پستی:</p>
+        <p style="margin:0 0 12px;color:var(--muted)">
+          تهران، قرچک<br>
+          خیابان محمدآباد مهدیه ۲۱، پلاک ۱۰
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+          <a class="cta-btn" href="https://www.google.com/maps/search/?api=1&query=%D8%AA%D9%87%D8%B1%D8%A7%D9%86+%D9%82%D8%B1%DA%86%DA%A9+%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86+%D9%85%D8%AD%D9%85%D8%AF%D8%A2%D8%A8%D8%A7%D8%AF+%D9%85%D9%87%D8%AF%DB%8C%D9%87+21+%D9%BE%D9%84%D8%A7%DA%A9+10" target="_blank" rel="noopener noreferrer">باز کردن در گوگل مپس</a>
+
+          <a class="cta-btn" href="tel:+989224015405">تماس فوری</a>
+        </div>
+
+        <hr style="margin:16px 0;border-color:#f1f7f7">
+
+        <p class="small" style="margin:0 0 8px"><strong>ساعات پاسخگویی:</strong></p>
+        <p style="margin:0;color:var(--muted)">روزهای کاری: ۹ صبح تا ۱۹ عصر — برای پاسخ سریع از واتساپ یا تلگرام استفاده کنید.</p>
       </div>
 
-      <div class="card">
-        <h3>بیمه آتش‌سوزی</h3>
-        <p>پوشش اموال منقول و غیرمنقول، مناسب منازل و واحدهای تجاری.</p>
+      <!-- نقشه تعبیه‌شده -->
+      <div class="panel map-wrap" aria-hidden="false">
+        <!-- از query گوگل مپس به صورت embed استفاده شده -->
+        <iframe
+          title="نقشه بیمه‌شهر"
+          src="https://www.google.com/maps?q=%D8%AA%D9%87%D8%B1%D8%A7%D9%86+%D9%82%D8%B1%DA%86%DA%A9+%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86+%D9%85%D8%AD%D9%85%D8%AF%D8%A2%D8%A8%D8%A7%D8%AF+%D9%85%D9%87%D8%AF%DB%8C%D9%87+21+%D9%BE%D9%84%D8%A7%DA%A9+10&output=embed"
+          width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- تماس -->
-  <section class="contact-section" id="contact">
+    <footer>
+      © تمامی حقوق متعلق به بیمه‌شهر — اطلاعات تماس: ۰۹۲۲۴۰۱۵۴۰۵
+    </footer>
 
-    <div class="info-card">
-      <h2 style="margin-top:0">ارتباط سریع</h2>
-      <p>شماره تماس: <strong>۰۹۲۲۴۰۱۵۴۰۵</strong></p>
-
-      <a class="btn" href="tel:+989224015405">تماس تلفنی</a>
-      <a class="btn" href="https://wa.me/989224015405" target="_blank">واتساپ</a>
-      <a class="btn" href="https://t.me/+989224015405" target="_blank">تلگرام</a>
-      <a class="btn" href="https://eitaa.com/+989224015405" target="_blank">ایتا</a>
-      <a class="btn" href="sms:+989224015405">ارسال پیامک</a>
-
-      <hr style="border-color:#222;margin:20px 0">
-
-      <p><strong>آدرس:</strong><br>
-      تهران، قرچک، خیابان محمدآباد  
-      مهدیه ۲۱، پلاک ۱۰</p>
-
-      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=تهران+قرچک+خیابان+محمدآباد+مهدیه+۲۱+پلاک+۱۰" target="_blank">
-        نمایش در نقشه
-      </a>
-    </div>
-
-    <div class="info-card">
-      <h3 style="margin-top:0">چرا بیمه‌شهر؟</h3>
-      <p style="color:var(--muted);line-height:1.8">
-        ✔️ مقایسه قیمت شرکت‌های بیمه  
-        ✔️ پشتیبانی آنلاین و تلفنی  
-        ✔️ صدور آنی بیمه‌نامه  
-        ✔️ پرداخت امن  
-        ✔️ خدمات ویژه برای مشتریان وفادار  
-      </p>
-    </div>
-
-  </section>
-
-  <footer>
-    تمامی حقوق محفوظ است © بیمه‌شهر
-  </footer>
-
+  </div>
 </body>
 </html>
