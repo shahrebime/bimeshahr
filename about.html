@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره ما - بیمه شهر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052d4;
+            --secondary: #00c6ff;
+            --accent: #7e3af2;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8fafc;
+            --gradient: linear-gradient(135deg, #0066ff 0%, #00c6ff 100%);
+            --gradient-dark: linear-gradient(135deg, #0052d4 0%, #0099cc 100%);
+            --neon-glow: 0 0 10px rgba(0, 102, 255, 0.7), 0 0 20px rgba(0, 102, 255, 0.5), 0 0 30px rgba(0, 102, 255, 0.3);
+            --neon-glow-secondary: 0 0 10px rgba(0, 198, 255, 0.7), 0 0 20px rgba(0, 198, 255, 0.5);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* هدر و ناوبری */
+        header {
+            background: rgba(10, 10, 20, 0.98);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .header-scrolled {
+            padding: 15px 0;
+            background: rgba(10, 10, 20, 0.99);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: var(--neon-glow);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            font-size: 2.8rem;
+            animation: pulse 3s infinite;
+            filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.8));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* بخش هیرو صفحه درباره ما */
+        .about-hero {
+            background: linear-gradient(rgba(10, 10, 20, 0.85), rgba(10, 10, 20, 0.95)), 
+                        radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.25) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(0, 198, 255, 0.15) 0%, transparent 50%);
+            padding: 200px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="%230066ff" fill-opacity="0.05" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" /></svg>');
+            background-size: cover;
+            background-position: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+            text-shadow: var(--neon-glow-secondary);
+        }
+
+        .breadcrumb span {
+            color: #a0aec0;
+        }
+
+        .about-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, var(--secondary) 50%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .about-hero p {
+            font-size: 1.5rem;
+            color: #a0aec0;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeInUp 1.2s ease 0.3s both;
+        }
+
+        /* بخش زمان واقعی */
+        .live-time {
+            background: var(--gradient);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .time-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .time-item {
+            text-align: center;
+        }
+
+        .time-label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .time-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* بخش معرفی */
+        .intro-section {
+            padding: 100px 0;
+            background: var(--dark);
+            position: relative;
+        }
+
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(0, 198, 255, 0.08) 0%, transparent 50%);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-text h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+
+        .intro-text p {
+            font-size: 1.2rem;
+            color: #cbd5e0;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, rgba(40, 40, 60, 0.8), rgba(25, 25, 40, 0.9));
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 102, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #a0aec0;
+            font-size: 1.1rem;
+        }
+
+        .intro-visual {
+            position: relative;
+        }
+
+        .visual-main {
+            background: linear-gradient(145deg, rgba(40, 40, 60, 0.9), rgba(25, 25, 40, 0.95));
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            text-align: center;
+        }
+
+        .company-logo {
+            width: 150px;
+            height: 150px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 
+                0 20px 40px rgba(0, 102, 255, 0.4),
+                var(--neon-glow);
+        }
+
+        .visual-main h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .founding-date {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: var(--neon-glow-secondary);
+        }
+
+        /* بخش ماموریت و چشم‌انداز */
+        .mission-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .mission-card {
+            background: linear-gradient(145deg, rgba(40, 40, 60, 0.9), rgba(25, 25, 40, 0.95));
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient);
+            box-shadow: var(--neon-glow);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 
+                0 35px 70px rgba(0, 0, 0, 0.6),
+                var(--neon-glow);
+        }
+
+        .mission-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 2.5rem;
+            box-shadow: 
+                0 15px 30px rgba(0, 102, 255, 0.4),
+                var(--neon-glow);
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover .mission-icon {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .mission-card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .mission-card p {
+            color: #cbd5e0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* بخش تیم */
+        .team-section {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            background: linear-gradient(145deg, rgba(40, 40, 60, 0.9), rgba(25, 25, 40, 0.95));
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .team-member:hover::before {
+            left: 100%;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 102, 255, 0.3);
+            box-shadow: 
+                0 35px 70px rgba(0, 0, 0, 0.6),
+                var(--neon-glow);
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 3rem;
+            box-shadow: 
+                0 15px 30px rgba(0, 102, 255, 0.4),
+                var(--neon-glow);
+        }
+
+        .team-member h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .team-member .position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .team-member p {
+            color: #a0aec0;
+            line-height: 1.7;
+        }
+
+        /* CTA بخش */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--gradient);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button.primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-button.primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* فوتر */
+        footer {
+            background: var(--darker);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            color: white;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-right: 10px;
+        }
+
+        .copyright {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        /* انیمیشن‌ها */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 1200px) {
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .time-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.3rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .intro-text h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* دکمه بازگشت به بالا */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            box-shadow: 
+                0 10px 30px rgba(0, 102, 255, 0.5),
+                var(--neon-glow);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 
+                0 20px 40px rgba(0, 102, 255, 0.7),
+                0 0 30px rgba(0, 102, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-city"></i>
+                <span>بیمه شهر</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">خانه</a>
+                <a href="services.html" class="nav-link">خدمات</a>
+                <a href="about.html" class="nav-link">درباره ما</a>
+                <a href="contact.html" class="nav-link">تماس با ما</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- بخش هیرو صفحه درباره ما -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">خانه</a>
+                <span>/</span>
+                <span>درباره ما</span>
+            </div>
+            <h1>درباره بیمه شهر</h1>
+            <p>پیشگام در ارائه خدمات بیمه‌ای مدرن و هوشمند برای زندگی شهری. با نوآوری و تعهد، امنیت و آرامش را به زندگی شما هدیه می‌دهیم</p>
+        </div>
+    </section>
+
+    <!-- بخش زمان واقعی -->
+    <section class="live-time">
+        <div class="container">
+            <div class="time-container">
+                <div class="time-item">
+                    <div class="time-label">تاریخ امروز</div>
+                    <div class="time-value" id="current-date">--/--/----</div>
+                </div>
+                <div class="time-item">
+                    <div class="time-label">ساعت ایران</div>
+                    <div class="time-value" id="current-time">--:--:--</div>
+                </div>
+                <div class="time-item">
+                    <div class="time-label">سال تأسیس</div>
+                    <div class="time-value">۱۴۰۴</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش معرفی -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>سفری به آینده بیمه</h2>
+                    <p><strong>بیمه شهر</strong> در سال ۱۴۰۴ با چشم‌اندازی روشن و متعهد به تحول در صنعت بیمه پایه‌گذاری شد. ما باور داریم که زندگی شهری مدرن نیازمند راهکارهای بیمه‌ای هوشمند و منعطف است.</p>
+                    <p>ماموریت ما ارائه خدمات بیمه‌ای است که نه تنها از دارایی‌های شما محافظت می‌کند، بلکه زندگی روزمره شما را نیز تسهیل می‌بخشد. با ترکیب تکنولوژی روز و تجربه متخصصان، راهکارهای نوآورانه‌ای خلق کرده‌ایم که پاسخگوی نیازهای پیچیده زندگی شهری است.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">۱۰۰+</div>
+                            <div class="stat-label">مشتری راضی</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">۲۴/۷</div>
+                            <div class="stat-label">پشتیبانی</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">۱۵+</div>
+                            <div class="stat-label">خدمت تخصصی</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">۹۸%</div>
+                            <div class="stat-label">رضایت مشتریان</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="intro-visual">
+                    <div class="visual-main">
+                        <div class="company-logo">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h3>بیمه شهر</h3>
+                        <div class="founding-date">تأسیس: ۱۴۰۴</div>
+                        <p>پیشگام در بیمه‌های هوشمند شهری</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش ماموریت و چشم‌انداز -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>ماموریت ما</h3>
+                    <p>ایجاد تحول در صنعت بیمه با ارائه راهکارهای هوشمند و شخصی‌سازی شده که امنیت مالی و آرامش خاطر را برای شهروندان به ارمغان می‌آورد. ما متعهد به ارائه خدمات سریع، شفاف و قابل اعتماد هستیم.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>چشم‌انداز</h3>
+                    <p>تبدیل شدن به پیشروترین ارائه‌دهنده خدمات بیمه‌ای هوشمند در منطقه تا سال ۱۴۱۰. ما قصد داریم استانداردهای جدیدی در صنعت بیمه تعریف کنیم و زندگی شهری را امن‌تر و ساده‌تر کنیم.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>ارزش‌های ما</h3>
+                    <p>شفافیت، نوآوری، تعهد و مشتری‌مداری اساس کار ماست. ما به شفافیت کامل در تمام مراحل، نوآوری مستقل در خدمات و تعهد بی‌قید و شرط به رضایت مشتریان باور داریم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش تیم -->
+    <section class="team-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 60px; background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">تیم متخصص ما</h2>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>محمد رضایی</h3>
+                    <div class="position">مدیر عامل</div>
+                    <p>با بیش از ۱۵ سال تجربه در صنعت بیمه و مدیریت، هدایت تیم بیمه شهر را بر عهده دارد.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>فاطمه محمدی</h3>
+                    <div class="position">مدیر فنی</div>
+                    <p>متخصص در توسعه راهکارهای فناوری اطلاعات و سیستم‌های هوشمند بیمه‌ای.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>علی کریمی</h3>
+                    <div class="position">مدیر خدمات مشتریان</div>
+                    <p>متعهد به ارائه بهترین تجربه کاربری و پشتیبانی بی‌وقفه به مشتریان.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA بخش -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>به خانواده بیمه شهر بپیوندید</h2>
+                <p>همین حالا با ما تماس بگیرید و از مشاوره رایگان متخصصان ما بهره‌مند شوید</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button primary">
+                        <i class="fas fa-phone"></i>
+                        تماس با ما
+                    </a>
+                    <a href="services.html" class="cta-button secondary">
+                        <i class="fas fa-shield-alt"></i>
+                        مشاهده خدمات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>بیمه شهر</h4>
+                    <p>ارائه‌دهنده خدمات بیمه‌ای مدرن و تخصصی برای زندگی شهری. با تمرکز بر نیازهای امروز شهرنشینان، آرامش و امنیت را به زندگی شما بازمی‌گردانیم.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>لینک‌های سریع</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="services.html">خدمات ما</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>خدمات بیمه‌ای</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">بیمه خودروی شهری</a></li>
+                        <li><a href="services.html">بیمه آپارتمان‌نشینی</a></li>
+                        <li><a href="services.html">بیمه تجهیزات دیجیتال</a></li>
+                        <li><a href="services.html">بیمه مسئولیت شهری</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© ۱۴۰۳ - کلیه حقوق مادی و معنوی این وبسایت متعلق به شرکت بیمه شهر می‌باشد</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- دکمه بازگشت به بالا -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // اسکروال انیمیشن
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTop = document.getElementById('backToTop');
+            const header = document.getElementById('main-header');
+            
+            // نمایش/پنهان کردن دکمه بازگشت به بالا و تغییر هدر
+            window.addEventListener('scroll', function() {
+                // دکمه بازگشت به بالا
+                if (window.pageYOffset > 500) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+                
+                // تغییر استایل هدر
+                if (window.pageYOffset > 100) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+            
+            // کلیک روی دکمه بازگشت به بالا
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // زمان و تاریخ واقعی ایران
+            function updateIranDateTime() {
+                const now = new Date();
+                const options = { 
+                    timeZone: 'Asia/Tehran',
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                };
+                
+                const timeOptions = {
+                    timeZone: 'Asia/Tehran',
+                    hour12: false,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                };
+                
+                const date = now.toLocaleDateString('fa-IR', options);
+                const time = now.toLocaleTimeString('fa-IR', timeOptions);
+                
+                document.getElementById('current-date').textContent = date;
+                document.getElementById('current-time').textContent = time;
+            }
+            
+            // بروزرسانی هر ثانیه
+            updateIranDateTime();
+            setInterval(updateIranDateTime, 1000);
+        });
+    </script>
+</body>
+                                                                            </html>
